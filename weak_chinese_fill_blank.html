@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>弱基础华文词语填空练习</title>
+<style>
+  body{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;background:#f6f7fb;color:#222;margin:0;padding:18px;line-height:1.9;font-size:20px}
+  .container{max-width:980px;margin:auto;background:white;border-radius:18px;padding:22px;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+  h1{font-size:28px;margin:0 0 8px} h2{font-size:23px;margin-top:28px;border-left:6px solid #4f7cff;padding-left:10px}
+  .note{background:#eef4ff;border-radius:12px;padding:12px 14px;font-size:17px;margin:12px 0;color:#28406b}
+  .word-bank{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px}
+  .word{border:2px solid #4f7cff;background:#f8fbff;border-radius:999px;padding:8px 16px;cursor:pointer;user-select:none;font-weight:600;transition:.15s}
+  .word:hover{transform:translateY(-1px)} .word.selected{background:#4f7cff;color:white}.word.used{opacity:.35;background:#ddd;border-color:#bbb;color:#777;cursor:not-allowed}
+  .blank{display:inline-flex;align-items:center;justify-content:center;min-width:96px;min-height:38px;border:2px dashed #8290a8;border-radius:10px;margin:0 4px;padding:0 9px;background:#fbfcff;vertical-align:middle;cursor:pointer;color:#174ea6;font-weight:700}
+  .blank.filled{border-style:solid;background:#eef4ff}.blank.correct{background:#e8f7ed;border-color:#31a354;color:#146c2e}.blank.wrong{background:#ffecec;border-color:#e55353;color:#a61b1b}
+  .hintBtn{border:0;background:#ffe9a8;border-radius:50%;width:28px;height:28px;font-weight:bold;cursor:pointer;margin:0 5px;color:#604600}.hintText{font-size:16px;color:#775900;background:#fff7d1;border-radius:8px;padding:2px 7px;margin-left:4px;display:none}
+  .clickable{border-bottom:1px dotted #999;cursor:pointer;padding:0 1px}.clickable:hover{background:#fff4c2}
+  .panel{position:sticky;bottom:10px;background:#1f2937;color:white;border-radius:14px;padding:12px 16px;margin-top:20px;box-shadow:0 3px 15px rgba(0,0,0,.18);font-size:18px}.panel b{color:#ffe082}.small{font-size:15px;color:#666}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button.action{border:0;border-radius:12px;padding:10px 18px;font-size:18px;cursor:pointer;background:#4f7cff;color:white;font-weight:700}button.reset{background:#6b7280}.score{font-weight:700;margin-top:10px}.sentence{margin:14px 0;padding:10px 12px;border-radius:12px;background:#fafafa}.section{border:1px solid #e4e7ef;border-radius:14px;padding:12px;margin-top:12px}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>华文词语填空练习</h1>
+  <div class="note">使用方法：先点击词库中的词语，再点击空格。每个词只能用一次，用完会变灰。看不懂的词，可以直接点击查看拼音和英文意思。</div>
+
+  <h2>一、词库</h2>
+  <div class="word-bank" id="wordBank"></div>
+
+  <h2>二、句子填空</h2>
+  <div class="section" id="sentencePractice"></div>
+
+  <h2>三、综合填空</h2>
+  <div class="section article">
+    <p><span data-key="数码科技">数码科技</span>已成为人们<span data-key="生活">生活</span>中<span data-key="重要">重要</span>的<span data-key="一部分">一部分</span>。<span data-key="使用">使用</span><span data-key="科技">科技</span><span data-key="辅助">辅助</span><span data-key="学习">学习</span>也成为一种 <span class="blank" data-answer="趋势" data-hint="trend / a general direction" data-initial="qū shì"></span><button class="hintBtn">?</button><span class="hintText"></span>，变得越来越<span data-key="普遍">普遍</span>。</p>
+    <p><span data-key="教育部">教育部</span><span data-key="推出">推出</span><span data-key="计划">计划</span>，为所有<span data-key="中学生">中学生</span> <span class="blank" data-answer="提供" data-hint="provide / give something useful" data-initial="tí gōng"></span><button class="hintBtn">?</button><span class="hintText"></span> <span data-key="个人学习电子配备">个人学习电子配备</span>。学校将为学生 <span class="blank" data-answer="选择" data-hint="choose / select" data-initial="xuǎn zé"></span><button class="hintBtn">?</button><span class="hintText"></span> 与<span data-key="订购">订购</span><span data-key="适合">适合</span>他们的个人学习电子配备。</p>
+    <p>为了<span data-key="确保">确保</span>没有学生因为 <span class="blank" data-answer="缺乏" data-hint="lack / not have enough" data-initial="quē fá"></span><button class="hintBtn">?</button><span class="hintText"></span> 个人学习电子配备而<span data-key="影响">影响</span><span data-key="学习">学习</span>，教育部将<span data-key="资助">资助</span>有需要的学生。</p>
+    <p>教育部 <span class="blank" data-answer="估计" data-hint="estimate / make a rough calculation" data-initial="gū jì"></span><button class="hintBtn">?</button><span class="hintText"></span>，到了年底，将有大约150所中学的学生获得个人学习电子配备。受访的学生表示<span data-key="欢迎">欢迎</span>这个计划，希望能早日拿到个人学习电子配备。</p>
+  </div>
+
+  <div class="buttons">
+    <button class="action" onclick="checkAnswers()">检查答案</button>
+    <button class="action reset" onclick="resetAll()">重做</button>
+  </div>
+  <div id="score" class="score"></div>
+
+  <div class="panel" id="infoPanel">点击一个词语，这里会显示：<b>拼音 + English meaning + 中文解释</b></div>
+</div>
+
+<script>
+const vocab = {
+  "趋势": {py:"qū shì", en:"trend", cn:"事情发展的方向。"},
+  "提供": {py:"tí gōng", en:"provide", cn:"把需要的东西给别人。"},
+  "选择": {py:"xuǎn zé", en:"choose / select", cn:"从几个里面挑一个。"},
+  "缺乏": {py:"quē fá", en:"lack", cn:"没有，或不够。"},
+  "估计": {py:"gū jì", en:"estimate", cn:"大概地计算或判断。"},
+  "寿命": {py:"shòu mìng", en:"lifespan", cn:"可以使用或存在的时间。"},
+  "再循环": {py:"zài xún huán", en:"recycle", cn:"把旧东西再处理、再使用。"},
+  "因素": {py:"yīn sù", en:"factor", cn:"影响事情结果的条件。"},
+  "数码科技": {py:"shù mǎ kē jì", en:"digital technology", cn:"使用电脑、网络等的科技。"},
+  "生活": {py:"shēng huó", en:"life", cn:"日常过日子的活动。"},
+  "重要": {py:"zhòng yào", en:"important", cn:"很有价值，不能忽视。"},
+  "一部分": {py:"yí bù fen", en:"a part", cn:"整体里面的一小部分。"},
+  "使用": {py:"shǐ yòng", en:"use", cn:"拿来用。"},
+  "科技": {py:"kē jì", en:"technology", cn:"科学技术。"},
+  "辅助": {py:"fǔ zhù", en:"assist / help", cn:"帮助完成某事。"},
+  "学习": {py:"xué xí", en:"learn / study", cn:"获得知识或技能。"},
+  "普遍": {py:"pǔ biàn", en:"common", cn:"很多地方或很多人都有。"},
+  "教育部": {py:"jiào yù bù", en:"Ministry of Education", cn:"负责教育事务的部门。"},
+  "推出": {py:"tuī chū", en:"launch / introduce", cn:"把新计划或新产品正式拿出来。"},
+  "计划": {py:"jì huà", en:"plan", cn:"预先安排好的做法。"},
+  "中学生": {py:"zhōng xué shēng", en:"secondary school students", cn:"在中学读书的学生。"},
+  "个人学习电子配备": {py:"gè rén xué xí diàn zǐ pèi bèi", en:"personal learning device", cn:"学生个人用来学习的电子设备。"},
+  "订购": {py:"dìng gòu", en:"order / purchase", cn:"预先购买。"},
+  "适合": {py:"shì hé", en:"suitable", cn:"很配合需要或情况。"},
+  "确保": {py:"què bǎo", en:"ensure", cn:"保证某件事会做到。"},
+  "影响": {py:"yǐng xiǎng", en:"affect", cn:"对人或事情产生作用。"},
+  "资助": {py:"zī zhù", en:"fund / support financially", cn:"用钱帮助别人。"},
+  "欢迎": {py:"huān yíng", en:"welcome", cn:"愿意接受，感到高兴。"},
+  "环保": {py:"huán bǎo", en:"environmentally friendly", cn:"保护环境。"},
+  "复杂": {py:"fù zá", en:"complicated", cn:"不简单，有很多部分。"},
+  "成就": {py:"chéng jiù", en:"achievement", cn:"做出来的成绩。"},
+  "公德心": {py:"gōng dé xīn", en:"public-spiritedness", cn:"在公共场所为别人和社会着想的心。"}
+};
+
+const bankWords = ["趋势","提供","选择","缺乏","估计","寿命","再循环","因素"];
+const sentenceItems = [
+  {text:["省电灯泡不仅能节省电费，", "还比普通灯泡长。"], answer:"寿命", hint:"lifespan / 使用的期限", initial:"shòu mìng"},
+  {text:["这些垃圾很特别，它们是用", "的塑料瓶制成的，十分环保。"], answer:"再循环", hint:"recycled / used again", initial:"zài xún huán"},
+  {text:["这场手术比较复杂，", "需要十五个小时才能完成。"], answer:"估计", hint:"estimate / 推算", initial:"gū jì"},
+  {text:["一个人是否能在事业上取得成就，受到许多", "的影响。"], answer:"因素", hint:"factor / 决定成败的条件", initial:"yīn sù"},
+  {text:["这些人乱丢垃圾，真是", "公德心。"], answer:"缺乏", hint:"lack / 没有或不够", initial:"quē fá"}
+];
+let selectedWord = null;
+let hintCounts = new WeakMap();
+
+function showInfo(word){
+  const v = vocab[word];
+  if(!v) return;
+  document.getElementById('infoPanel').innerHTML = `<b>${word}</b> ｜ ${v.py} ｜ ${v.en}<br>${v.cn}`;
+}
+function makeWord(word){
+  const span=document.createElement('span'); span.className='word'; span.textContent=word; span.dataset.word=word;
+  span.onclick=()=>{ if(span.classList.contains('used')) return; document.querySelectorAll('.word').forEach(w=>w.classList.remove('selected')); span.classList.add('selected'); selectedWord=word; showInfo(word); };
+  return span;
+}
+function renderBank(){ const bank=document.getElementById('wordBank'); bankWords.forEach(w=>bank.appendChild(makeWord(w))); }
+function renderSentences(){
+  const box=document.getElementById('sentencePractice');
+  sentenceItems.forEach((item,i)=>{
+    const div=document.createElement('div'); div.className='sentence';
+    div.innerHTML=`${i+1}. ${wrapKnown(item.text[0])}<span class="blank" data-answer="${item.answer}" data-hint="${item.hint}" data-initial="${item.initial}"></span><button class="hintBtn">?</button><span class="hintText"></span>${wrapKnown(item.text[1])}`;
+    box.appendChild(div);
+  });
+}
+function wrapKnown(text){
+  Object.keys(vocab).sort((a,b)=>b.length-a.length).forEach(k=>{ text=text.replaceAll(k,`<span data-key="${k}">${k}</span>`); });
+  return text;
+}
+function markUsed(word, used){ document.querySelectorAll(`.word[data-word="${word}"]`).forEach(w=>{w.classList.toggle('used',used); if(used) w.classList.remove('selected');}); }
+function currentUsedWords(){ return Array.from(document.querySelectorAll('.blank.filled')).map(b=>b.dataset.value); }
+function setupInteractions(){
+  document.querySelectorAll('[data-key]').forEach(el=>{ el.classList.add('clickable'); el.onclick=()=>showInfo(el.dataset.key); });
+  document.querySelectorAll('.blank').forEach(blank=>{
+    blank.onclick=()=>{
+      if(blank.dataset.value){ markUsed(blank.dataset.value,false); blank.textContent=''; delete blank.dataset.value; blank.className='blank'; return; }
+      if(!selectedWord) return;
+      blank.textContent=selectedWord; blank.dataset.value=selectedWord; blank.classList.add('filled');
+      blank.onclick; showInfo(selectedWord); markUsed(selectedWord,true); selectedWord=null; document.querySelectorAll('.word').forEach(w=>w.classList.remove('selected'));
+    };
+  });
+  document.querySelectorAll('.hintBtn').forEach(btn=>{
+    btn.onclick=()=>{ const blank=btn.previousElementSibling; const text=btn.nextElementSibling; const n=(hintCounts.get(btn)||0)+1; hintCounts.set(btn,n); text.style.display='inline'; text.textContent = n===1 ? `English hint: ${blank.dataset.hint}` : `Pinyin hint: ${blank.dataset.initial}`; };
+  });
+}
+function checkAnswers(){
+  let total=0, correct=0;
+  document.querySelectorAll('.blank').forEach(b=>{ total++; b.classList.remove('correct','wrong'); if(b.dataset.value===b.dataset.answer){b.classList.add('correct'); correct++;} else {b.classList.add('wrong');} });
+  document.getElementById('score').textContent=`得分：${correct} / ${total}`;
+}
+function resetAll(){
+  selectedWord=null; document.querySelectorAll('.blank').forEach(b=>{b.textContent=''; delete b.dataset.value; b.className='blank';});
+  document.querySelectorAll('.word').forEach(w=>w.classList.remove('used','selected'));
+  document.querySelectorAll('.hintText').forEach(t=>{t.style.display='none'; t.textContent='';});
+  document.getElementById('score').textContent='';
+  document.getElementById('infoPanel').innerHTML='点击一个词语，这里会显示：<b>拼音 + English meaning + 中文解释</b>';
+}
+renderBank(); renderSentences(); setupInteractions();
+</script>
+</body>
+</html>
